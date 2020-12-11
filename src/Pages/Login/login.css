@@ -1,0 +1,24 @@
+.box-login {
+    padding: 60px;    
+}
+
+.input-label {
+    margin-top: 5px;
+}
+
+.box-login .input-label label{
+    display: block;
+}
+.box-login .input-label input{
+    height: 25px;
+    border-radius: 5px;
+    
+}
+
+.box-login button {
+    margin-top: 10px;
+    width: 175px;
+    height: 35px;
+    cursor: pointer;
+    border-radius: 9px;
+}
