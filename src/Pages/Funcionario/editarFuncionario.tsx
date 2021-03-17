@@ -1,5 +1,11 @@
 import React from 'react'
 
+
+function loadFuncioario()
+{
+    
+}
+
 const EditarFuncionario: React.FC = () => {
     return (
         <div>
@@ -11,3 +17,4 @@ const EditarFuncionario: React.FC = () => {
 
 
 export default EditarFuncionario
+

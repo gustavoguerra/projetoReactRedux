@@ -1,4 +1,5 @@
 import { applyMiddleware, createStore, Middleware, Reducer } from "redux";
+//import { composeWithDevTools } from 'redux-devtools-extension';
 import { AuthAction, AuthState } from "./modules/auth/types"
 import {funcionarioState} from './modules/funcionario/types'
 
@@ -13,7 +14,7 @@ export default (reducers: Reducer<StoreState,StoreAction>, middlewares: Middlewa
 
     const enhancer = applyMiddleware(...middlewares);
 
-    // const devTools = window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION();
-
+    
+    //return createStore(reducers, composeWithDevTools(enhancer));
     return createStore(reducers, enhancer);
 }

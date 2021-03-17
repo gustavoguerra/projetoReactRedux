@@ -15,13 +15,12 @@ export default function funcionario(state = initialState, actions: funcionarioAc
                 ...state,
                 loadFuncionarioRequest: true,
                 error: false
-                
-            }      
+            }
         case funcionarioTypes.LOAD_SUCCES:
             return {
                 ...state,
-                data: actions.payload,                
-                loadFuncionarioRequest: false,                
+                data: actions.payload,
+                loadFuncionarioRequest: false,
                 error: false
             }
         case funcionarioTypes.LOAD_FAILURE:
@@ -34,13 +33,25 @@ export default function funcionario(state = initialState, actions: funcionarioAc
             return {
                 ...state,
                 loadFuncionarioRequest: true,
-                error:false
+                error: false
             }
         case funcionarioTypes.LOAD_SUCCES_BY_FILTER:
             return {
                 ...state,
                 dataByFilter: actions.payload,
-                loadFuncionarioRequest: false,                
+                loadFuncionarioRequest: false,
+                error: false
+            }
+        case funcionarioTypes.LOAD_SUCCES_BY_ID:
+            return {
+                ...state,
+                loadFuncionarioRequest: true,
+                error: false
+            }
+        case funcionarioTypes.LOAD_REQUEST_BY_ID:
+            return {
+                ...state,
+                loadFuncionarioRequest: true,
                 error: false
             }
         default:

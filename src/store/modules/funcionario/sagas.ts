@@ -32,7 +32,25 @@ export function* fincionarioByFilter({ payload }: ActionType<typeof actions.func
     }
 }
 
+export function* funcionarioById({ payload }: ActionType<typeof actions.funcionarioByid>) {
+    try {
+        const response = yield call(axios.login.get,'/funcionario/getbyid/'+payload,{
+            headers: {
+                'Authorization': localStorage.getItem('TOKEN')
+            }
+        })
+        console.log(response)
+
+        yield put(actions.funcionarioSuccesById(response.data))
+    }
+    catch(error){
+        console.log(error)
+    }
+}
+
+
 export default all([
     takeLatest(funcionarioTypes.LOAD_REQUEST_ALL, listaFuncionarios),
-    takeLatest(funcionarioTypes.LOAD_REQUEST_BY_FILTER, fincionarioByFilter)
+    takeLatest(funcionarioTypes.LOAD_REQUEST_BY_FILTER, fincionarioByFilter),
+    takeLatest(funcionarioTypes.LOAD_REQUEST_BY_ID, funcionarioById)
 ]);

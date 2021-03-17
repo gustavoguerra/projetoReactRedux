@@ -40,7 +40,7 @@ export interface FuncionarioDTO {
 export interface Funcionario {
     id: number;
     nome: string;
-    rG: string;
+    rg: string;
     cnpj_cpf: string;
     email: string;
     telefone: string;
@@ -51,7 +51,9 @@ export enum funcionarioTypes {
     LOAD_REQUEST_ALL = '@/funcionario/REQUEST_ALL',
     LOAD_SUCCES = '@/funcionario/SUCCES',
     LOAD_SUCCES_BY_FILTER = '@/funcionario/LOAD_SUCCES_BY_FILTER',
-    LOAD_FAILURE = '@/funcionario/FAILURE'
+    LOAD_FAILURE = '@/funcionario/FAILURE',
+    LOAD_SUCCES_BY_ID = '@/funcionario/LOAD_SUCCES_BY_ID',
+    LOAD_REQUEST_BY_ID = '@/funcionario/LOAD_BY_ID',
 }
 
 export interface funcionarioState {

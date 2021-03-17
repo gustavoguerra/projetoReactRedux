@@ -3,6 +3,7 @@ import clsx from 'clsx';
 import { makeStyles } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
 import Button from '@material-ui/core/Button';
+//import Link from '@material-ui/core/Link';
 import List from '@material-ui/core/List';
 import Divider from '@material-ui/core/Divider';
 import ListItem from '@material-ui/core/ListItem';
@@ -10,6 +11,8 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import InboxIcon from '@material-ui/core/ListItemText';
 import MailIcon from '@material-ui/core/ListItemText';
+import Typography from '@material-ui/core/Typography';
+import { Link } from 'react-router-dom';
 
 import '../Side-Bar/sidebar.css'
 
@@ -58,7 +61,7 @@ export default function TemporaryDrawer() {
 
             <List>
                 {['Usuario', 'Funcionario', 'Empresa', 'Fornecedor', 'Tipo de Projeto'].map((text, index) => (
-                    <ListItem button key={text}>
+                    <ListItem button key={text} component={Link} to={text}>
                         <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
                         <ListItemText primary={text} />
                     </ListItem>
@@ -69,9 +72,6 @@ export default function TemporaryDrawer() {
     );
 
     return (
-
-
-
         <React.Fragment key={''}>
 
             {/* {(['left'] as Anchor[]).map((anchor) => (
